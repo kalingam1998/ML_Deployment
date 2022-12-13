@@ -14,6 +14,9 @@ def create_input_Dataframe():
     "IncomeTotal" : IncomeTotal,
     "LiabilitiesTotal" : LiabilitiesTotal,
     "LoanDuration" : LoanDuration,
+    "AppliedAmount" : AppliedAmount,
+    "Amount": Amount,
+    "Interest":Interest,
     "EMI": EMI,
     "PreviousRepaymentsBeforeLoan" : PreviousRepaymentsBeforeLoan,
     "MonthlyPaymentDay" :MonthlyPaymentDay,
@@ -56,7 +59,10 @@ LiabilitiesTotal = st.text_input('Total Liabilities')
 st.subheader('Loan Details')
 LoanDuration = st.text_input('Loan Duration (in months)') 
 AppliedAmount = st.text_input('Applied Loan Amount')
+Amount = st.text_input('Amount (granted)')
+Interest = st.text_input('Interest')
 EMI = st.text_input('Equated Monthly Installment')
+
 
 st.subheader('Payment Details')
 PreviousRepaymentsBeforeLoan = st.text_input('PreviousRepaymentsBeforeLoan')
