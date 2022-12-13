@@ -78,7 +78,7 @@ Rating = st.selectbox('Rating',("a","aa", "b","c", "d","e","f","hr"))
 st.header('Loan Application Status')
 if st.button(label="Check Status"):
   result = Classifier()
-  st.spinner(text="In process...")
+  st.spinner(text="Analyzing the Information")
   
   if result=="Defaulter":
     st.write("Rejected")
