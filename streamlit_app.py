@@ -2,6 +2,7 @@ import pandas as pd
 import streamlit as st
 import joblib
 import sklearn
+import time
 
 classifier_pipeline = joblib.load('RFC_pipeline_FINAL.joblib')
 #Regressor_pipeline = joblib.load('RR_pipeline_FINAL.joblib')
