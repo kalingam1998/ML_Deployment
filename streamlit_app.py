@@ -45,6 +45,12 @@ def Classifier():
   
   return result
 
+def Regressor():
+  
+  # code here for regressor predictions
+  #
+  #
+
 st.title('Bandora Loan Approval Dashboard')
 
 st.header("Borrower's Information")
@@ -92,7 +98,13 @@ if st.button(label="Check Status"):
   
   if result=="Defaulter":
     st.write("Based on details provided, the user may default so loan is not approved, Thanks!")
-  
+    with st.spinner('Predicting preferred Loan details ...'):
+      time.sleep(5)
+      
+      # Regressor code goes below
+      #
+      #
+      
   if result=="Not Defaulter":
     st.write("Congratulations! Your loan is Approved!")
   
