@@ -14,7 +14,7 @@ HomeOwnershipType = st.selectbox('Home Ownership Type',("Homeless","Owner","Livi
                                                         "unfurnished property","Council house","Joint tenant","Joint ownership","Mortgage",
                                                         "Owner with encumbrance","Other"))
 Restructured = st.selectbox('Restructured',("Yes","No"))
-LiabilitiesTotal = st..text_input('Total Liabilities')
+LiabilitiesTotal = st.text_input('Total Liabilities')
 
 st.subheader('Loan Details')
 LoanDuration = st.number_input('Loan Duration (in months)') 
