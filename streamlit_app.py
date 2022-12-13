@@ -48,6 +48,8 @@ def Regressor():
   # code here for regressor predictions
   #
   #
+  result = []
+  return result
 
 st.title('Bandora Loan Approval Dashboard')
 st.header("Borrower's Information")
