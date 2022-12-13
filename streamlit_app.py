@@ -97,6 +97,7 @@ if st.button(label="Check Status"):
   
   if result=="Defaulter":
     st.write("Based on details provided, the user may default so loan is not approved, Thanks!")
+    time.sleep(3)
     with st.spinner('Predicting preferred Loan details ...'):
       time.sleep(5)
       
