@@ -76,7 +76,7 @@ st.subheader('Other')
 Rating = st.selectbox('Rating',("a","aa", "b","c", "d","e","f","hr"))
 
 st.header('Loan Application Status')
-if st.form_submit_button(label="Check Status"):
+if st.button(label="Check Status"):
   result = Classifier()
   st.spinner(text="In process...")
   
