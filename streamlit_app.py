@@ -8,7 +8,7 @@ classifier_pipeline = joblib.load('RFC_pipeline_FINAL.joblib')
 def create_input_Dataframe():
   
   input_dictionary = {
-    "Language" : Language,
+    "LanguageCode" : Language,
     "HomeOwnershipType": HomeOwnershipType,
     "Restructured" : Restructured,
     "IncomeTotal" : IncomeTotal,
