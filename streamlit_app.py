@@ -32,7 +32,6 @@ def create_input_Dataframe():
   }
   
   DF = pd.DataFrame(input_dictionary,index=[0])
-  
   return DF
 
 def Classifier():
@@ -46,13 +45,11 @@ def Classifier():
   return result
 
 def Regressor():
-  
   # code here for regressor predictions
   #
   #
 
 st.title('Bandora Loan Approval Dashboard')
-
 st.header("Borrower's Information")
 
 st.subheader('Personal Background')
