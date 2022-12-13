@@ -1,6 +1,8 @@
 import pandas as pd
 import streamlit as st
 import joblib
+import sklearn
+
 classifier_pipeline = joblib.load('RFC_pipeline_FINAL.joblib')
 
 def create_input_Dataframe():
