@@ -1,6 +1,7 @@
 import pandas as pd
 import streamlit as st
 import joblib
+!pip install sklearn
 import sklearn
 
 classifier_pipeline = joblib.load('RFC_pipeline_FINAL.joblib')
