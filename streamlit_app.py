@@ -48,11 +48,11 @@ st.title('Bandora Loan Approval Dashboard')
 st.header("Borrower's Information")
 
 st.subheader('Personal Background')
-Language = st.selectbox('Language',("Estonian","English", "Russian","Finnish", "German","Spanish","Slovakian"))
-HomeOwnershipType = st.selectbox('Home Ownership Type',("Homeless","Owner","Living with parents","Tenant","pre-furnished property","Tenant", 
-                                                        "unfurnished property","Council house","Joint tenant","Joint ownership","Mortgage",
-                                                        "Owner with encumbrance","Other"))
-Restructured = st.selectbox('Restructured',("Yes","No"))
+Language = st.selectbox('Language',("estonian","english", "russian","finnish", "german","spanish","slovakian"))
+HomeOwnershipType = st.selectbox('Home Ownership Type',("homeless","owner","living with parents","tenant, pre-furnished property",
+                                                        "tenant, unfurnished property","council house","joint tenant","joint ownership","mortgage",
+                                                        "owner with encumbrance","other"))
+Restructured = st.selectbox('Restructured',("yes","no"))
 IncomeTotal = st.text_input('Total Icome')
 LiabilitiesTotal = st.text_input('Total Liabilities')
 
