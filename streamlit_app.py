@@ -4,6 +4,7 @@ import joblib
 import sklearn
 
 classifier_pipeline = joblib.load('RFC_pipeline_FINAL.joblib')
+Regressor_pipeline = joblib.load('RR_pipeline_FINAL.joblib')
 
 def create_input_Dataframe():
   
@@ -83,6 +84,8 @@ Rating = st.selectbox('Rating',("a","aa", "b","c", "d","e","f","hr"))
 
 st.header('Loan Application Status')
 if st.button(label="Check Status"):
+  with st.spinner('Analyzing the Provided Information ...'):
+    time.sleep(5)
   result = Classifier()
   st.spinner(text="Analyzing the Information")
   
