@@ -26,12 +26,12 @@ def create_input_Dataframe():
     "Rating" : Rating
   }
   
-  DF = pd.DataFrame(input_dictionary)
+  DF = pd.DataFrame(input_dictionary,index=[0])
   
   return DF
 
 def Classifier():
-  input = create_input_Dataframe(index=[0])
+  input = create_input_Dataframe()
   prediction = classifier_pipeline.predict(input)
   if prediction==1:
     result = "Defaulter"
