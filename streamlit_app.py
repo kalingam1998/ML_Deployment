@@ -4,7 +4,7 @@ import joblib
 import sklearn
 
 classifier_pipeline = joblib.load('RFC_pipeline_FINAL.joblib')
-Regressor_pipeline = joblib.load('RR_pipeline_FINAL.joblib')
+#Regressor_pipeline = joblib.load('RR_pipeline_FINAL.joblib')
 
 def create_input_Dataframe():
   
