@@ -91,10 +91,10 @@ if st.button(label="Check Status"):
   st.spinner(text="Analyzing the Information")
   
   if result=="Defaulter":
-    st.write("Rejected")
+    st.write("Based on details provided, the user may default so loan is not approved, Thanks!")
   
   if result=="Not Defaulter":
-    st.write("Approved")
+    st.write("Congratulations! Your loan is Approved!")
   
 
 
