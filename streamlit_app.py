@@ -188,9 +188,10 @@ if st.button(label="Check Status"):
     with st.spinner('Predicting Eligible Loan details ...'):
       Regressor_result = np.array(Regressor())
       time.sleep(3)
-      st.write("Equated Monthly Installment (EMI) = ",Regressor_result[0,0])
-      st.write("Eligible Loan Amount (ELA) = ",Regressor_result[0,1])
-      st.write("Return on Investment (ROI) = ", Regressor_result[0,2])
+      st.header('Eligibile Loan Amount Details')
+      st.markdown(":red[Equated Monthly Installment (EMI)] = ",Regressor_result[0,0])
+      st.markdown(":red[Eligible Loan Amount (ELA)] = ",Regressor_result[0,1])
+      st.markdown(":red[Return on Investment (ROI)] = ", Regressor_result[0,2])
       
       
       
