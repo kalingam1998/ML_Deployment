@@ -114,7 +114,8 @@ MaritalStatus = st.selectbox('Marital Status',("single","married","cohabitant","
 OccupationArea = st.selectbox('Occupation Area',("retail and wholesale","construction","processing","transport and warehousing",
                                                  "healtcare and social help","hospitality and catering","info and telecom",
                                                  "civil service & military","education","finance and insurance","agriculture,forestry and fishing",
-                                                 "administrative","energy","art and entertainment","research","real-estate","utlities","mining"))
+                                                 "administrative","energy","art and entertainment","research","real-estate","utlities","mining",
+                                                "not set","other"))
 
 EmploymentStatus = st.selectbox('Employment Status',("fully employed","entrepneur","retiree","self employed","partially employed","not set"))
 EmploymentDurationCurrentEmployer = st.selectbox('Employment Duration Current Employer',("morethan5years","upto1year","upto5years","upto2years",
