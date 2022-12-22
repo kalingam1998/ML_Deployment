@@ -98,7 +98,7 @@ st.subheader('Personal Background')
 Gender = st.selectbox('Gender',("male","woman","undefined"))
 Age= st.text_input('Age')
 Country = st.selectbox('Country',("ee","fi","es","sk"))
-Education = st.selectbox('Country',("secondary education","higher education","vocational education","basic education",
+Education = st.selectbox('Education',("secondary education","higher education","vocational education","basic education",
                                    "primary education","not_present"))
 MaritalStatus = st.selectbox('Marital Status',("single","married","cohabitant","divorced","widow"))
 OccupationArea = st.selectbox('Occupation Area',("retail and wholesale","construction","processing","transport and warehousing",
