@@ -1,5 +1,6 @@
 import pandas as pd
 import streamlit as st
+import numpy as np
 import joblib
 import sklearn
 import time
@@ -184,7 +185,7 @@ if st.button(label="Check Status"):
     st.write("Based on details provided, the user may default so loan is not approved, Thanks!")
     time.sleep(3)
     with st.spinner('Predicting Eligible Loan details ...'):
-      Regressor_result = Regressor()
+      Regressor_result = np.array(Regressor())
       time.sleep(5)
       st.write("Equated Monthly Installment (EMI) = ",Regressor_result[0] )
       st.write("Eligible Loan Amount (ELA) = ",Regressor_result[1] )
