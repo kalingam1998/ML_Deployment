@@ -19,7 +19,7 @@ def create_input_Dataframe():
     "AppliedAmount" : AppliedAmount,
     "Amount": Amount,
     "Interest":Interest,
-    "EMI": EMI,
+    "MonthlyPayment": MonthlyPayment,
     "PreviousRepaymentsBeforeLoan" : PreviousRepaymentsBeforeLoan,
     "MonthlyPaymentDay" :MonthlyPaymentDay,
     
@@ -28,6 +28,40 @@ def create_input_Dataframe():
     "PrincipalBalance" : PrincipalBalance,
     "InterestAndPenaltyBalance" : InterestAndPenaltyBalance,
     "Bids" : BidsPortfolioManger+BidsApi,
+    "Rating" : Rating
+  }
+  
+def create_input_Dataframe_Regression():
+    
+  input_dictionary = {
+    "Age" :Age,
+    "LanguageCode" : Language,
+    "HomeOwnershipType": HomeOwnershipType,
+    "Restructured" : Restructured,
+    "IncomeTotal" : IncomeTotal,
+    "LiabilitiesTotal" : LiabilitiesTotal,
+    "ExistingLiabilities" : ExistingLiabilities,
+    "RefinanceLiabilities" : RefinanceLiabilities,
+    "DebtToIncome" : DebtToIncome,
+    "FreeCash" : FreeCash,
+    "NoOfPreviousLoansBeforeLoan" : NoOfPreviousLoansBeforeLoan,
+    "AmountOfPreviousLoansBeforeLoan" : AmountOfPreviousLoansBeforeLoan,
+    
+    "LoanDuration" : LoanDuration,
+    "AppliedAmount" : AppliedAmount,
+    "Amount": Amount,
+    "Interest":Interest,
+    "EMI": MonthlyPayment,
+    "PreviousRepaymentsBeforeLoan" : PreviousRepaymentsBeforeLoan,
+    "MonthlyPaymentDay" :MonthlyPaymentDay,
+    
+    "PrincipalPaymentsMade" : PrincipalPaymentsMade,
+    "InterestAndPenaltyPaymentsMade" : InterestAndPenaltyPaymentsMade,
+    "PrincipalBalance" : PrincipalBalance,
+    "InterestAndPenaltyBalance" : InterestAndPenaltyBalance,
+    "BidsPortfolioManger" : BidsPortfolioManger,
+    "BidsApi" : BidsApi,
+    "BidsManual" : BidsManual,
     "Rating" : Rating
   }
   
@@ -55,6 +89,7 @@ st.title('Bandora Loan Approval Dashboard')
 st.header("Borrower's Information")
 
 st.subheader('Personal Background')
+Age= st.text_input('Age')
 Language = st.selectbox('Language',("estonian","english", "russian","finnish", "german","spanish","slovakian"))
 HomeOwnershipType = st.selectbox('Home Ownership Type',("homeless","owner","living with parents","tenant, pre-furnished property",
                                                         "tenant, unfurnished property","council house","joint tenant","joint ownership","mortgage",
@@ -62,16 +97,26 @@ HomeOwnershipType = st.selectbox('Home Ownership Type',("homeless","owner","livi
 Restructured = st.selectbox('Restructured',("yes","no"))
 IncomeTotal = st.text_input('Total Icome')
 LiabilitiesTotal = st.text_input('Total Liabilities')
+ExistingLiabilities = st.text_input('Existing Liabilities')
+RefinanceLiabilities = st.text_input('Refinance Liabilities')
+DebtToIncome = st.text_input('Debt To Income')
+FreeCash = st.text_input('Free Cash')
+
 
 st.subheader('Loan Details')
+NoOfPreviousLoansBeforeLoan = st.text_input('No Of Previous Loans Before Loan')
+AmountOfPreviousLoansBeforeLoan = st.text_input('Amount Of Previous Loans Before Loan')
+NewCreditCustomer = st.text_input('New Credit Customer')
 LoanDuration = st.text_input('Loan Duration (in months)') 
 AppliedAmount = st.text_input('Applied Loan Amount')
 Amount = st.text_input('Amount (granted)')
 Interest = st.text_input('Interest')
-EMI = st.text_input('Equated Monthly Installment')
+MonthlyPayment = st.text_input('Monthly Payment')
+
 
 
 st.subheader('Payment Details')
+PreviousEarlyRepaymentsCountBeforeLoan = st.text_input('Previous Early Repayments Count Before Loan')
 PreviousRepaymentsBeforeLoan = st.text_input('PreviousRepaymentsBeforeLoan')
 MonthlyPaymentDay = st.text_input('MonthlyPaymentDay (digit)')
 PrincipalPaymentsMade = st.text_input('Principal Payments Made') 
@@ -84,6 +129,7 @@ InterestAndPenaltyBalance = st.text_input('InterestAndPenaltyBalance')
 st.subheader('Amount of Investment offers made via')
 BidsPortfolioManger = st.text_input('BidsPortfolioManger')
 BidsApi = st.text_input('BidsApi')
+BidsManual = st..text_input('BidsManual')
 
 st.subheader('Other')
 Rating = st.selectbox('Rating',("a","aa", "b","c", "d","e","f","hr"))
