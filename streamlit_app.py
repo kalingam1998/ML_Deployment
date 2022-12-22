@@ -30,6 +30,8 @@ def create_input_Dataframe():
     "Bids" : BidsPortfolioManger+BidsApi,
     "Rating" : Rating
   }
+  DF = pd.DataFrame(input_dictionary,index=[0])
+  return DF
   
 def create_DF_Regression():
     
