@@ -110,7 +110,7 @@ Age= st.text_input('Age')
 Country = st.selectbox('Country',("ee","fi","es","sk"))
 Education = st.selectbox('Education',("secondary education","higher education","vocational education","basic education",
                                    "primary education","not_present"))
-MaritalStatus = st.selectbox('Marital Status',("single","married","cohabitant","divorced","widow"))
+MaritalStatus = st.selectbox('Marital Status',("single","married","cohabitant","divorced","widow","not_specified"))
 OccupationArea = st.selectbox('Occupation Area',("retail and wholesale","construction","processing","transport and warehousing",
                                                  "healtcare and social help","hospitality and catering","info and telecom",
                                                  "civil service & military","education","finance and insurance","agriculture,forestry and fishing",
