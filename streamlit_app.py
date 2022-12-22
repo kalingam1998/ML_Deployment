@@ -56,7 +56,8 @@ def create_DF_Regression():
     "FreeCash" : FreeCash,
     "NoOfPreviousLoansBeforeLoan" : NoOfPreviousLoansBeforeLoan,
     "AmountOfPreviousLoansBeforeLoan" : AmountOfPreviousLoansBeforeLoan,
-    
+   
+    "LoanDuration" : LoanDuration,
     "AppliedAmount" : AppliedAmount,
     "Amount": Amount,
     "Interest":Interest,
@@ -71,7 +72,8 @@ def create_DF_Regression():
     "BidsPortfolioManger" : BidsPortfolioManger,
     "BidsApi" : BidsApi,
     "BidsManual" : BidsManual,
-    "Rating" : Rating
+    "Rating" : Rating,
+    "CreditScoreEsMicroL" : CreditScoreEsMicroL
   }
   
   DF = pd.DataFrame(input_dictionary,index=[0])
