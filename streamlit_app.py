@@ -54,6 +54,7 @@ def create_DF_Regression():
     "RefinanceLiabilities" : RefinanceLiabilities,
     "DebtToIncome" : DebtToIncome,
     "FreeCash" : FreeCash,
+    "PreviousEarlyRepaymentsCountBeforeLoan" : PreviousEarlyRepaymentsCountBeforeLoan,
     "NoOfPreviousLoansBeforeLoan" : NoOfPreviousLoansBeforeLoan,
     "AmountOfPreviousLoansBeforeLoan" : AmountOfPreviousLoansBeforeLoan,
    
@@ -69,7 +70,7 @@ def create_DF_Regression():
     "InterestAndPenaltyPaymentsMade" : InterestAndPenaltyPaymentsMade,
     "PrincipalBalance" : PrincipalBalance,
     "InterestAndPenaltyBalance" : InterestAndPenaltyBalance,
-    "BidsPortfolioManger" : BidsPortfolioManger,
+    "BidsPortfolioManager" : BidsPortfolioManager,
     "BidsApi" : BidsApi,
     "BidsManual" : BidsManual,
     "Rating" : Rating,
@@ -160,7 +161,7 @@ PrincipalBalance = st.text_input('PrincipalBalance')
 InterestAndPenaltyBalance = st.text_input('InterestAndPenaltyBalance')
 
 st.subheader('Amount of Investment offers made via')
-BidsPortfolioManger = st.text_input('BidsPortfolioManger')
+BidsPortfolioManager = st.text_input('BidsPortfolioManger')
 BidsApi = st.text_input('BidsApi')
 BidsManual = st.text_input('BidsManual')
 
