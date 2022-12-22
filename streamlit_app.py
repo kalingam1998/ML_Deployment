@@ -27,7 +27,7 @@ def create_input_Dataframe():
     "InterestAndPenaltyPaymentsMade" : InterestAndPenaltyPaymentsMade,
     "PrincipalBalance" : PrincipalBalance,
     "InterestAndPenaltyBalance" : InterestAndPenaltyBalance,
-    "Bids" : BidsPortfolioManger+BidsApi,
+    "Bids" : BidsPortfolioManager+BidsApi,
     "Rating" : Rating
   }
   DF = pd.DataFrame(input_dictionary,index=[0])
