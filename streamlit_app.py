@@ -178,20 +178,20 @@ CreditScoreEsMicroL = st.selectbox('CreditScoreEsMicroL',("m1","m2", "m3","m4", 
 st.header('Loan Application Status')
 if st.button(label="Check Status"):
   with st.spinner('Analyzing the Provided Information ...'):
-    time.sleep(3)
+    time.sleep(2)
   result = Classifier()
   st.spinner(text="Analyzing the Information")
   
   if result=="Defaulter":
     st.write("Based on details provided, the user may default so loan is not approved, Thanks!")
-    time.sleep(3)
+    time.sleep(2)
     with st.spinner('Predicting Eligible Loan details ...'):
       Regressor_result = np.array(Regressor())
-      time.sleep(3)
+      time.sleep(2)
       st.header('Eligibile Loan Amount Details')
-      st.markdown(":red[Equated Monthly Installment (EMI)] = ",Regressor_result[0,0])
-      st.markdown(":red[Eligible Loan Amount (ELA)] = ",Regressor_result[0,1])
-      st.markdown(":red[Return on Investment (ROI)] = ", Regressor_result[0,2])
+      st.text("Equated Monthly Installment (EMI) = ",Regressor_result[0,0])
+      st.text("Eligible Loan Amount (ELA) = ",Regressor_result[0,1])
+      st.text("Return on Investment (ROI) = ", Regressor_result[0,2])
       
       
       
