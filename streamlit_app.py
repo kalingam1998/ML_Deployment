@@ -45,6 +45,10 @@ def create_DF_Regression():
     "EmploymentStatus" : EmploymentStatus,
     "EmploymentDurationCurrentEmployer" : EmploymentDurationCurrentEmployer,
     
+    "NewCreditCustomer" : NewCreditCustomer,
+    "VerificationType" : VerificationType,
+    "UseOfLoan" : UseOfLoan,
+    
     "LanguageCode" : Language,
     "HomeOwnershipType": HomeOwnershipType,
     "Restructured" : Restructured,
