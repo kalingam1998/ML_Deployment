@@ -202,8 +202,20 @@ Majority of loan applicants are male
 - it becomes easy when we have performed bivariate analysis and plotted correlation heatmaps.
 - it is done among the features having good correlations to expose the trends and insights.
 - **FINAL observations are:**
-  - 
-
+  - Borrowers with low Loan Amount and High interest rates have greater chance of defaulting than with those having low amount and low interest.
+  - Borrowers with high loan Amount and less chances have low chances of defaulting.
+  - Borrowers with high interest and longer loanDuration have high chances of defaulting than those who have low interest and shorter loanDuration
+  - Borrowers having having low Loan amount and a non zero previous loans before loan have low chance of getting defualted.
+  - Borrowers having no previous loans before loan have high chances of defaulting .
+  - Borrowers having high loan amount and high no of existingliabilities have high chances of defaulting
+  - Borrowers having high principal balance and high loan amount have likely less chances of defaulting
+  - Borrowers having less interest and low monthlyPayment have likely less chances of defualting
+  - Borrowers having low MonthlyPayments and shorter LoanDurations have less chances of defaulting and vice versa.
+  - no clear trend among Amount, EmploymentStatus and target Default/non-default.
+  - no clear trend among LoanDuration, MaritalStatus and target Default/non-default.
+  - no clear trend among Amount, Age and target Default/non-default.
+  - no clear trend among BidsPortfolioManager, Amount and target Default/non-default
+  - The County and City attributes are very diverse, no clear relationships can be indentified from such diverse features.
 
 **Descriptive Statistics:**
 
