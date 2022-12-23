@@ -7,10 +7,10 @@ Data for the study has been retrieved from a publicly available data set of a le
 
 - The dataset contains the individual loan details from **2009** to **2019** having both the **defaulted** and **non-defaulted** loans
 - The dataset does not contain any target attributes for 
-- - defaulted, non-defauted borrowers
-- - Eligible Loan Amount (ELA)
-- - Return on Investment (ROI)
-- - Equated Monthly Installment (EMI) 
+  - defaulted, non-defauted borrowers
+  - Eligible Loan Amount (ELA)
+  - Return on Investment (ROI)
+  - Equated Monthly Installment (EMI) 
 - These 4 target attributes will be created using feature engineering
 
 The dataset has 112 attributes intially. The attributes definition of dataset can be found here ([**Data Understanding**](https://drive.google.com/file/d/1l9YjhV4IRDHCohIDsRGKL9ADNTPaVA69/view?usp=sharing)), it will help you understand the dataset better.
@@ -35,6 +35,25 @@ As the dataset is not clean, so preprocessing techniques were used to clean the 
       - -1, 0, 6 in 'EmploymentStatus'
       - -1, 0 in 'OccupationArea'
       - -1 in 'HomeOwnershipType'
+
+## Data Wrangling
+Using the techniques of data wrangling, errors were removed, gaps in the dataset were indentified, the data imputation was done to make the data ready for Exploratory Data Analysis (EDA).
+- Incorrect data entry is checked for the categorical attributes.
+  - City and County
+    - Upon exploring the city attribute and checking the distribution
+    - The two major cities with counts are Tallinn : 6467 , TALLINN : 5395
+    - As we can see these two cities are same, so typing error exists in our dataset.
+  - By removing the trailing space (_*) and converting to lower case, the inconsistent data entry is corrected.
+- Columns with missing values are indentified:
+  - VerificationType 0.058 %, Gender 0.058 %, MonthlyPayment 8.56 %, County 26.5 %, City 6.51 %, Education 0.058 %
+  - MaritalStatus .058 %, EmploymentStatus 0.25 %, EmploymentDurationCurrentEmployer 1.12 %, OccupationArea 0.11 % 
+  - HomeOwnershipType 2.13 %, DebtToIncome 0.058 %, FreeCash 0.05 %, Rating 3.52 %, CreditScoreEsMicroL 33.83 %
+  - PreviousRepaymentsBeforeLoan 24.95 %
+- Data Imputation
+  - The missing values are imputed with different approach for numerical and categorical attributes.
+    - After checking the distribution of numerical attributes, it is observed that majority of attributes have highly skewed distribution
+    - So to replace the missing values, the median of respective attribute is used instead of mean() because for skewed attributes, we don't use mean() for imputation
+    - The missing values in categorical attributes are imputed with the mode() of respective attributes.
 
 ## EDA
 **Introduction:**
