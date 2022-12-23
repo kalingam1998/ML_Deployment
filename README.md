@@ -19,22 +19,22 @@ The dataset has 112 attributes intially. The attributes definition of dataset ca
 As the dataset is not clean, so preprocessing techniques were used to clean the dataset and make it ready for Exploratory Data Analysis (EDA).
 - The attributes having greater than 40% missing values were filtered out.
 - There are some features which have no role in targets, so they are also removed:
-- - 'ReportAsOfEOD', 'LoanId', 'LoanNumber', 'ListedOnUTC', 'DateOfBirth' (because age is already present), 'BiddingStartedOn','UserName','NextPaymentNr','NrOfScheduledPayments','IncomeFromPrincipalEmployer', 'IncomeFromPension', 'IncomeFromFamilyAllowance', 'IncomeFromSocialWelfare','IncomeFromLeavePay', 'IncomeFromChildSupport', 'IncomeOther' (As Total income is already present which is total of all these income), 'LoanApplicationStartedDate','ApplicationSignedHour', 'ApplicationSignedWeekday','ActiveScheduleFirstPaymentReached', 'PlannedInterestTillDate', 'LastPaymentOn', 'ExpectedLoss', 'LossGivenDefault', 'ExpectedReturn', 'ProbabilityOfDefault', 'PrincipalOverdueBySchedule', 'StageActiveSince', 'ModelVersion','WorseLateCategory'
+  - 'ReportAsOfEOD', 'LoanId', 'LoanNumber', 'ListedOnUTC', 'DateOfBirth' (because age is already present), 'BiddingStartedOn','UserName','NextPaymentNr','NrOfScheduledPayments','IncomeFromPrincipalEmployer', 'IncomeFromPension', 'IncomeFromFamilyAllowance', 'IncomeFromSocialWelfare','IncomeFromLeavePay', 'IncomeFromChildSupport', 'IncomeOther' (As Total income is already present which is total of all these income), 'LoanApplicationStartedDate','ApplicationSignedHour', 'ApplicationSignedWeekday','ActiveScheduleFirstPaymentReached', 'PlannedInterestTillDate', 'LastPaymentOn', 'ExpectedLoss', 'LossGivenDefault', 'ExpectedReturn', 'ProbabilityOfDefault', 'PrincipalOverdueBySchedule', 'StageActiveSince', 'ModelVersion','WorseLateCategory'
 - As no time series analysis is involved in our project, so some attributes involving date-time are removed:
--  - 'LoanDate', 'FirstPaymentDate','MaturityDate_Original','MaturityDate_Last','LastPaymentOn'
--  - note that attribute 'DefaultDate' is not removed, because it contains the default date for those borrowers who defaulted and - for those borrowers who didn't default. This attribute will help us in creating the our 1st target attribute (defaulted, non-defauted borrowers).
+   - 'LoanDate', 'FirstPaymentDate','MaturityDate_Original','MaturityDate_Last','LastPaymentOn'
+   - note that attribute 'DefaultDate' is not removed, because it contains the default date for those borrowers who defaulted and - for those borrowers who didn't default. This attribute will help us in creating the our 1st target attribute (defaulted, non-defauted borrowers).
 -  There are some attributes in numeric form in the dataset but they are actually categorical attributes as per data description such as :
--  -  Verification Type, Language Code, Gender, Use of Loan, Education, Marital Status,EmployementStatus, OccupationArea, 
--  - These attributes are converted to categorial type by using the respective attribute definition, to make these variables correct for Exploratory Data Analysis (EDA).
--  - Like for Gender attribute replacing [0,1,2] by ["Male","Woman","Undefined"] as per attribute definition of Gender.
--  - When the data distribution is checked for these attributes, there are some unreplacable values like :
--  -  - 22, 15, 10, 13, 7, 21 in 'LanguageCode' attribute.
--  -  - -1 in 'UseOfLoan'
--  -  - 0, -1 in 'Education'
--  -  - -1 in 'MaritalStatus'
--  -  - -1, 0, 6 in 'EmploymentStatus'
--  -  - -1, 0 in 'OccupationArea'
--  -  - -1 in 'HomeOwnershipType'
+   -  Verification Type, Language Code, Gender, Use of Loan, Education, Marital Status,EmployementStatus, OccupationArea, 
+   - These attributes are converted to categorial type by using the respective attribute definition, to make these variables correct for Exploratory Data Analysis (EDA).
+   - Like for Gender attribute replacing [0,1,2] by ["Male","Woman","Undefined"] as per attribute definition of Gender.
+   - When the data distribution is checked for these attributes, there are some unreplacable values like :
+      - 22, 15, 10, 13, 7, 21 in 'LanguageCode' attribute.
+      - -1 in 'UseOfLoan'
+      - 0, -1 in 'Education'
+      - -1 in 'MaritalStatus'
+      - -1, 0, 6 in 'EmploymentStatus'
+      - -1, 0 in 'OccupationArea'
+      - -1 in 'HomeOwnershipType'
 
 ## EDA
 **Introduction:**
