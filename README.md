@@ -218,28 +218,11 @@ Majority of loan applicants are male
   - The County and City attributes are very diverse, no clear relationships can be indentified from such diverse features.
 
 **Descriptive Statistics:**
-
+- The Descriptive Analysis of dataset can be found here ([**Descriptive Analysis**](https://colab.research.google.com/drive/1l-Z780JEs44L-PC8n-LU40IUP-oL7-Ph?usp=sharing))
 
 ## Feature Engineering
 
 ## Model Building
-
-#### Metrics considered for Model Evaluation
-**Accuracy , Precision , Recall and F1 Score**
-- Accuracy: What proportion of actual positives and negatives is correctly classified?
-- Precision: What proportion of predicted positives are truly positive ?
-- Recall: What proportion of actual positives is correctly classified ?
-- F1 Score : Harmonic mean of Precision and Recall
-
-#### Logistic Regression
-- Logistic Regression helps find how probabilities are changed with actions.
-- The function is defined as P(y) = 1 / 1+e^-(A+Bx) 
-- Logistic regression involves finding the **best fit S-curve** where A is the intercept and B is the regression coefficient. The output of logistic regression is a probability score.
-
-#### Random Forest Classifier
-- The random forest is a classification algorithm consisting of **many decision trees.** It uses bagging and features randomness when building each individual tree to try to create an uncorrelated forest of trees whose prediction by committee is more accurate than that of any individual tree.
-- **Bagging and Boosting**: In this method of merging the same type of predictions. Boosting is a method of merging different types of predictions. Bagging decreases variance, not bias, and solves over-fitting issues in a model. Boosting decreases bias, not variance.
-- **Feature Randomness**:  In a normal decision tree, when it is time to split a node, we consider every possible feature and pick the one that produces the most separation between the observations in the left node vs. those in the right node. In contrast, each tree in a random forest can pick only from a random subset of features. This forces even more variation amongst the trees in the model and ultimately results in lower correlation across trees and more diversification.
 
 
 ## Deployment
