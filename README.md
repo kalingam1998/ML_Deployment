@@ -88,9 +88,9 @@ Using the techniques of data wrangling, errors were removed, gaps in the dataset
 ## EDA
 **Introduction:**
 
-- **merged_data** dataset comprises of 1989 rows and 57 columns.
-- Dataset comprises of continious variable and float data type. 
-- Dataset column varaibales 'Open', 'Close', 'High', 'Low', 'Volume', 'Adj Close' are the stock variables from historical dataset and other variables are showing polarity and subjectivity of news which are the derived variables using sentiment analysis as discussed in above section.
+- The dataset after data wrangling comprises of 77394 rows and 45 columns.
+- Dataset comprises of int, float and object data types. 
+
 
 **Information of Dataset:**
 
