@@ -30,7 +30,7 @@ As the dataset is not clean, so preprocessing techniques were used to clean the 
    - When the data distribution is checked for these attributes, there are some unreplacable values like :
       - 22, 15, 10, 13, 7, 21 in 'LanguageCode' attribute.
       - -1 in 'UseOfLoan'
-      - 0, -1 in 'Education'
+      -  0, -1 in 'Education'
       - -1 in 'MaritalStatus'
       - -1, 0, 6 in 'EmploymentStatus'
       - -1, 0 in 'OccupationArea'
@@ -43,26 +43,26 @@ As the dataset is not clean, so preprocessing techniques were used to clean the 
     - So filtering out those rows in dataset where status is either Late or Repaid
     - Creating a new variable DefaultTarget, by assigning 1 to those rows where there is a value for defaultDate attribute and 0 to other.
     - It means those borrowers having default date belong to defaulted class in our target attribute
-  2) For Regression, we need to calculate Equated Monthly Installment, Eligible Loan Amount (ELA), Return On investment ROI (Risk to get profit)
-    - The EMI is calculated based on the following mathematical formula: **EMI = P × r × (1 + r) ^ n / ((1 + r) ^ n – 1)**
+  2) **For Regression, we need to calculate Equated Monthly Installment, Eligible Loan Amount (ELA), Return On investment ROI (Risk to get profit)**
+    - The **EMI** is calculated based on the following mathematical formula: **EMI = P × r × (1 + r) ^ n / ((1 + r) ^ n – 1)**
       - Where P = Loan amount. "Amount", r = Rate of interest, which is calculated on a monthly-basis-Interest, n = Loan tenure (in months).
-  3) Eligible Loan Amount, ELA = Assets (Income) - Liabilities of the borrower
+  3) **Eligible Loan Amount**, ELA = Assets (Income) - Liabilities of the borrower
     - **Assets**:
       -  **FreeCash** = ELA
       -   **TotalIncome** - **LiabilitiesTotal** = ELA
       -   Under Concsideration, Eligible Loan Amount means, with respect to a Mortgage Loan that is an Eligible Loan, the lesser of:
         - the Principal Balance of such Eligible Loan, AppliedAmount
         - the Market Value of such Eligible Loan PurchasePrice | BidPrinciple
-    -   **Approach Followed :**
+    -  **Approach Followed :**
         - Calculate AppliedAmount + AppliedAmount*Interest = Total Liabilities Amount
         - Divide by the loan tenure (months)
         - If the result is less than (TotalIncome- LiabilitiesTotal)*30/100
         - Then allow the Applied Amount, If not allow only the result of the previous calculation.
-  4) Preferred ROI
+  4) **Preferred ROI**
     - We weren't able to determine the procedure of handling Risk related to loan in order to determine Preferred ROI.
     - In order to complete the task in hand and complete it, we'll calculate ROI instead : 
-      - ROI = Investment Gain / Investment Base
-      - ROI = Amount lended * interest/100
+      - **ROI = Investment Gain / Investment Base**
+      - **ROI = Amount lended * interest/100**
 
 
 
