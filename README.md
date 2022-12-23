@@ -1,22 +1,13 @@
-# News oriented Stock Price Trend Prediction_DA-5-March
-Both of news data and stock market data are crucial for stock price prediction. 
-So, in this project we analyzed the dynamics of stock markets based on both daily news (text data) and stock prices (numerical data). 
-
+# Credit Risk Analysis for peer to peer lending firm Bandora
+The credit risk is analyzed to measure the possibility of loss as result of borrower failing to repay a loan or meeting the loan obligations. The more the credit risk the more it has a negative impact on performance of bank. The credit risk analysis is important because it allows the bank to plan strategies to avoid a negative outcome ahead in future.
+- In this project we analyzed the credit risk on individual loans, maximizing the Return on Investment (ROI) by predicting an Eligible Loan Amount and minimizing the financial risk between the lending firm Bandora and the borrowers.
 
 ## Understanding the Dataset
-The dataset we are working on is a combination of **Reddit
-news** and **the Dow Jones Industrial Average (DJIA) stock
-price** from **2008** to **2016**.
+Data for the study has been retrieved from a publicly available data set of a leading European P2P lending platform  ([**Bondora**](https://www.bondora.com/en/public-reports#dataset-file-format))
 
-- The news dataset contains the top
-**25** news from **Reddit** on each day from **2008** to **2016**. 
+- The dataset contains the individual loan details from **2009** to **2019** having both the **defaulted** and **non-defaulted** loans
 
-- The **DJIA** contains the core stock market information for each day
-such as **Open**, **Close**, and **Volume**. 
-
-- The label of the dataset is whether the stock price is **increase** (labeled as **1**) or **decrease**
-(labeled as **0**) on that day.
-
+- The dataset does not contain any target attributes like defaulted and non defaulted loans.
 
 ## Preprocessing and Sentiment Analysis
 
