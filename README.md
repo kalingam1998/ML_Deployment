@@ -13,7 +13,7 @@ Data for the study has been retrieved from a publicly available data set of a le
   - Equated Monthly Installment (EMI) 
 - These 4 target attributes will be created using feature engineering
 
-The dataset has 112 attributes intially. The attributes definition of dataset can be found here ([**Data Understanding**](https://drive.google.com/file/d/1l9YjhV4IRDHCohIDsRGKL9ADNTPaVA69/view?usp=sharing)), it will help you understand the dataset better.
+The dataset has 112 attributes intially. The attributes definition of dataset can be found here ([**Data Understanding**](https://colab.research.google.com/drive/1vcujgYWoKM-J_mc23TlaFa_NkWPMTL92?usp=sharing)), it will help you understand the dataset better.
 
 ## Preprocessing
 As the dataset is not clean, so preprocessing techniques were used to clean the dataset and make it ready for Exploratory Data Analysis (EDA).
