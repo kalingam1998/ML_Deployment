@@ -116,7 +116,87 @@ Majority of loan applicants are male
   - 57.15% of customers have undefined marital status, followed by 14.86 % customers who are single, then 12.38% customers who are married and 10.96% customers who are cohabitant.A very small % of customers are divorced (3.98) and widow (0.67).
   - Major distribution include 59.53% of customers with undefined employment status, followed by 35.29% customers who are 'fully employed'. A small 8 % of customers have one of these status ; entrepneur, retireee, self employed and partially employed.
   - Major distribution include 39.02% of customers with 'more than 5 years' duration, followed by 18.46% customers who have duration of 'up to 1 year' and 17.8% having 'up to 5 years' duration. The remaining % of customers have one of these duration ; 'up to 2 years', 'up to 3 years', 'retiree', 'other' ' up to 4 years' and 'trail period'.
-  - 
+  - Major distribution include 33.91% customers who are 'owner' followed by 21.76% having 'tenant, pre-furnished property', 16.51% who are 'living with parents' and 11.32% who have 'mortgage'.The remaining % of customers lie among 'other', 'joint ownership', 'joint tenant' etc
+  - Major distribution of customers lie between 0 and 70 DebtToIncome range. A less percentage of customers also have DebtToIncome up to 200.
+  - Major distribution of customers have 0 freecash, followed by some percentages having around 250 to 300. A less percentage of customers also have freecash up to 158748 approx.
+  - The major distribution of Rating is that 23% customers have rating 'f', 16% have 'hr' rating, '15% have 'e', 15% have 'd' followed by 13% having 'c'.
+  - The major distribution of this attrbute is such that 84.5% customers have no creditscoreesmicroL. Only 5.32 % have m1 score, 3% have m5, 2 % have m2 and another 2% have m3 score.
+  - 63.14% customers are new Credit Customers. 36.86% of customers are existing Credit Customers.
+  - The majority of customers have BidsPortfolioManger in range of 0 and 3000.
+  - The major percent of customers have age aroung 23 to 60 years.
+  - The major percent of customers have LoanDuration of 60 and around 36 months.
+  - The major ExistingLiabilities of customer are in range of 0 and 12.
+  - Majority of Customers have 0 RefinanceLiabilities, with some having up to 25.
+  - The customers have MonthlyPaymentDay high in number at 1st day,10th day, 15th day and overall the distribution is spread along the month.
+  - Majority of customers have no NoOfPreviousLoansBeforeLoan, followed some having up 24 no of previous loans.
+  - PreviousEarlyRepaymentsCountBeforeLoans for customer is in higher percentage at 0 value while some having up to 11 value.
+  - The Defualted customers are more in number than undefualted customers. The defualted ones are more than 40k and undefaulted are around 35k
+  - Major % of customers have 0 BidsApi, while some have up to around 7500.
+  - BidsManual attriute has major customers in 0 to 1500 range.
+  - No of customers who applied for less amounts are more than such customers who applied for normal aur high amounts.
+  - The Amount borrower received has same distribution as AppliedAmount the borrower applied for.
+  - The major distribution of Max interest rate accepted is between 0 and 70 as clear from Interest plot.
+  - The MonthlyPayment has more density from 0 to 400 range.  
+  - The incomeTotal has major of customers lying in range 0 to 3000.
+  - The DebtToIncome attribute has more customers in range 0 to around 65.
+  - Majority of customer have 0 freecash while some customers have upto around 160000.
+  - The PrincipalPaymentsMade are more in range 0 to 4000.
+  - InterestAndPenaltyPaymentsMade are more in range 0 to 3000.
+  - High % customers have principalbalance in range of 0 to 4000.
+  - InterestAndPenaltyBalance has more customers in range 0 to 9000.
+  - More customers have AmountOfPreviousLoansBeforeLoan in range 0 to 15000.
+  - PreviousRepaymentsBeforeLoan have high customers density in range 0 5000.
+  
+**Bivariate Analysis:**
+- In bivaraite analysis, the features are analyzed and explored with respect to each other to get hidden insights into the relation of different featuers
+- The correlation heat map is used to get the insights into the relation among different features
+- The categorical features are analyzed and explored using Seaborn countplot. The countplot is like an histogram for categorical attributes
+- The numerical features are analyzed and explored using Seaborn kdeplot and Displot
+- **The Final Observation are:**
+  - The Default/non-default target has a low correlation with BidsPortfolioManager 0.12, LanguageCode 0.14, Country 0.18, Interest 0.17, LoanDuration 0.14
+  - Correlation of EmploymentStatus with : BidsPortfolioManager 0.12, BidsApi 0.11, VerificationType 0.3, Gender 0.19
+  - Correlation of MaritalStatus with : LanguageCode 0.15, Interest 0.19
+  - Correlation of MonthlyPayment with : BidsPortfolioManager 0.32, BidsManual 0.22, NewCreditCustomer 0.15, Country 0.28, AppliedAmount 0.74, Amount 0.6, Interest 0.24
+  - Correlation of LoanDuration with : BidsPortfolioManager 0.17, Country 0.21, AppliedAmount 0.31, Amount 0.29, target 0.14
+  - Correlation of Interest with : NewCreditCustomer 0.28, LanguageCode 0.5, Country 0.32
+  - Correlation of Amount with : BidsPortfolioManager 0.61, BidsManual 0.41, NewCreditCustomer 0.12, Age 0.12, Country 0.23, AppliedAmount 0.89
+  - Correlation of AppliedAmount with : BidsPortfolioManager 0.6, BidsManual 0.37, NewCreditCustomer 0.12, Age 0.11, Country 0.23
+  - Correlation of Country with : NewCreditCustomer 0.23, LanguageCode 0.2, Age 0.24
+  - Correlation of Gender with : NewCreditCustomer 0.12
+  - Correlation of LanguageCode with : NewCreditCustomer 0.15
+  - Correlation of BidsApi with : BidsPortfolioManager 0.1
+  - We can see PrincipalBalance and InterestAndPenaltyBalance attributes have somehow a correlation with target variable of 0.34 and 0.33 respectively.
+  - Correlation of Default/non-default Target with : Rating 0.2, Restructured 0.18, CreditScoreEsMicroL 0.16, PrincipalBalance 0.34, InterestAndPenaltyBalance 0.33
+  - Correlation of PreviousEarlyRepaymentsCountBeforeLoan with : NoOfPreviousLoansBeforeLoan 0.14, AmountOfPreviousLoansBeforeLoan 0.14, PreviousRepaymentsBeforeLoan 0.14,
+  - Correlation of PreviousRepaymentsBeforeLoan with : ExistingLiabitlies 0.15, NoOfPreviousLoansBeforeLoan 0.4, AmountOfPreviousLoansBeforeLoan 0.57, 
+  - Correlation of AmountOfPreviousLoansBeforeLoan with : ExistingLiabilities 0.28, MonthlyPaymentDay 0.11, NoOfPreviousLoansBeforeLoan 0.77
+  - Correlation of NoOfPreviousLoansBeforeLoan with : ExistingLiabilities 0.33, MonthlyPaymentDay 0.1, 
+  - Correlation of InterestAndPenaltyBalance with : ExistingLiabilities 0.19, DebtToIncome 0.21, Rating 0.22, CreditScoreEsMicroL 0.25, PrincipalBalance 0.42,
+  - Correlation of PrincipalBalance with : Rating 0.13, InterestAndPenaltyPaymentsMade 0.16 
+  - Correlation of InterestAndPenaltyPaymentsMade with : ExistingLiabilities 0.15, RefinanceLiabilities 0.27, DebtToIncome 0.25, Restructured 0.26, PrincipalPaymentsMade 0.46
+  - Correlation of PrincipalPaymentsMade with : ExistingLiabilities 0.11, RefinanceLiabilities 0.2, DebtToIncome 0.2,
+  - Correlation of CreditScoreEsMicroL with : DebtToIncome 0.14, Rating 0.4
+  - Correlation of Restructured with : ExistingLiabilities 0.17, DebtToIncome 0.17
+  - Correlation of Freecash with : incomeTotal 0.16
+  - Correlation of DebtToIncome with : ExistingLiabilities 0.44, RefinanceLiabilities 0.35, 
+  - Correlation of RefinanceLiabilities with : ExistingLiabilities 0.46, 
+  - ** Observations For Categorial Bivariate Analysis**
+  - The countplot is like histogram for categorical attributes. So its easy to get insights about such attributes with target attributes
+  - New 'NewCreditCustomers' are more likey to default than existing.
+  - The customers having 'income and expenses verified', 'income verified' are more likely to default than others.
+  - The Estonians are less likely to default and 'finnish','spanish' are more likely to default.
+  - The males are more likely to default than females
+  - Customers with 'undefined','home improvement''other' use of loan are more likely to default.
+  - Customers with vocational education are more likely to default as it has more defualt ratio than other classes.
+  - Customers with CredictScoreEsMicroL are more likely to default.
+  - Customers with undefined maritalstatus are defaulting more than those with defined maritalstatus.
+  - Customers with undefined Employment status are more likely to default than those with defined. SO customers must have defined employmentstatus.
+  - Customers with employment duration more than 5 years are defaulting more. so compnany should avoid should customers.
+  - Customers with undefined occupationArea are defaulting more.
+  - Customrs with 'yes' restructured are more likely to default than others.
+  - Tenants, prefurnised property owners are likely to default more as defualt ratio is more this class than owners.
+  - The customers with HR rating are defaulting more as this class has more default ratio than F class. we can see from plot of Rating.
+
 
 
 **Descriptive Statistics:**
