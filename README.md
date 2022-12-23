@@ -36,6 +36,36 @@ As the dataset is not clean, so preprocessing techniques were used to clean the 
       - -1, 0 in 'OccupationArea'
       - -1 in 'HomeOwnershipType'
 
+- To perform the Credit Risk Analysis, We need to create the 4 Target attributes, 1 for Classification and 3 for Regression
+  1) For Classification, we need to create a Default/non-Default binary class Target attribute:
+    - Here, status is the variable which help us in creating target variable. The reason for not making status as target variable is that it has three unique values current, Late and repaid. There is no default feature but there is a feature default date which tells us when the borrower has defaulted means on which date the borrower defaulted. So, we will be combining Status and Default date features for creating target variable.The reason we cannot simply treat Late as default because it also has some records in which actual status is Late but the user has never defaulted i.e., default date is null. So we will first filter out all the current status records because they are not matured yet they are current loans.
+    - The Status attribute consists of three classes : Current, Late, Repaid
+    - So filtering out those rows in dataset where status is either Late or Repaid
+    - Creating a new variable DefaultTarget, by assigning 1 to those rows where there is a value for defaultDate attribute and 0 to other.
+    - It means those borrowers having default date belong to defaulted class in our target attribute
+  2) For Regression, we need to calculate Equated Monthly Installment, Eligible Loan Amount (ELA), Return On investment ROI (Risk to get profit)
+    - The EMI is calculated based on the following mathematical formula: **EMI = P × r × (1 + r) ^ n / ((1 + r) ^ n – 1)**
+      - Where P = Loan amount. "Amount", r = Rate of interest, which is calculated on a monthly-basis-Interest, n = Loan tenure (in months).
+  3) Eligible Loan Amount, ELA = Assets (Income) - Liabilities of the borrower
+    - **Assets**:
+      -  **FreeCash** = ELA
+      -   **TotalIncome** - **LiabilitiesTotal** = ELA
+      -   Under Concsideration, Eligible Loan Amount means, with respect to a Mortgage Loan that is an Eligible Loan, the lesser of:
+        - the Principal Balance of such Eligible Loan, AppliedAmount
+        - the Market Value of such Eligible Loan PurchasePrice | BidPrinciple
+    -   **Approach Followed :**
+        - Calculate AppliedAmount + AppliedAmount*Interest = Total Liabilities Amount
+        - Divide by the loan tenure (months)
+        - If the result is less than (TotalIncome- LiabilitiesTotal)*30/100
+        - Then allow the Applied Amount, If not allow only the result of the previous calculation.
+  4) Preferred ROI
+    - We weren't able to determine the procedure of handling Risk related to loan in order to determine Preferred ROI.
+    - In order to complete the task in hand and complete it, we'll calculate ROI instead : 
+      - ROI = Investment Gain / Investment Base
+      - ROI = Amount lended * interest/100
+
+
+
 ## Data Wrangling
 Using the techniques of data wrangling, errors were removed, gaps in the dataset were indentified, the data imputation was done to make the data ready for Exploratory Data Analysis (EDA).
 - Incorrect data entry is checked for the categorical attributes.
@@ -46,7 +76,7 @@ Using the techniques of data wrangling, errors were removed, gaps in the dataset
   - By removing the trailing space (_*) and converting to lower case, the inconsistent data entry is corrected.
 - Columns with missing values are indentified:
   - VerificationType 0.058 %, Gender 0.058 %, MonthlyPayment 8.56 %, County 26.5 %, City 6.51 %, Education 0.058 %
-  - MaritalStatus .058 %, EmploymentStatus 0.25 %, EmploymentDurationCurrentEmployer 1.12 %, OccupationArea 0.11 % 
+  - MaritalStatus 0.058 %, EmploymentStatus 0.25 %, EmploymentDurationCurrentEmployer 1.12 %, OccupationArea 0.11 % 
   - HomeOwnershipType 2.13 %, DebtToIncome 0.058 %, FreeCash 0.05 %, Rating 3.52 %, CreditScoreEsMicroL 33.83 %
   - PreviousRepaymentsBeforeLoan 24.95 %
 - Data Imputation
