@@ -85,20 +85,39 @@ Using the techniques of data wrangling, errors were removed, gaps in the dataset
     - So to replace the missing values, the median of respective attribute is used instead of mean() because for skewed attributes, we don't use mean() for imputation
     - The missing values in categorical attributes are imputed with the mode() of respective attributes.
 
-## EDA
+## Exploratory Data Analysis
 **Introduction:**
 
-- The dataset after data wrangling comprises of 77394 rows and 45 columns.
+- The dataset after data wrangling comprises of 77394 rows and 41 features and 4 targets.
 - Dataset comprises of int, float and object data types. 
-
-
-**Information of Dataset:**
-
-Using countplot on target variable **Label** we could see that Label 0 has '924' values and Label 1 has '1065'. By this information we could conclude that there is no imbalanced in the data and hence balancing of data is not required.
+- In EDA, three type of analysis are performed
+  - Univariate Analysis
+  - Bivariate Analysis
+  - Multivariate Analysis
 
 **Univariate Analysis:**
+- In univaraite analysis, each feature is analyzed and explored individually to get hidden insights into it.
+- The categorical features are analyzed and explored using Seaborn countplot. The countplot is like an histogram for categorical attributes
+- The numerical features are analyzed and explored using Seaborn kdeplot and Displot
+- A custom function was coded to calculate the percentage_of_top_n_classes of any categorical column given the n and the column's data
+- ** The Final Observations are :**
+  - The 53.6% customers have 'income and expenses verified' followed by 33.11% customers having 'income unverified'. And the remaining percentages include customers having 'income verified','income unverified, cross-referenced by phone','not set'
+  - 66% percent customers are 'male', followed by 27% 'female' and remaining 7% undefined
+Majority of loan applicants are male
+  - Majority of customers have 'MonthlyPayment' between 0 and 350
+  - There is great diversity for County feature.
+    - 38% customers have county 'Harju maakond', followed by 10% having 'HARJU' as county.
+    - No hard insights can be taken from such diverse feature
+  - There is great diversity for City feature similar to County feature.
+    - Customers belong to 5438 unique cities.
+    - only 15% customers are from 'Tallin' city, Other cities have very low percentages of customers
+    - No hard insights can be taken from such diverse feature
+  - Majority of customers have secondary education (37%), followed by 'higher education' with 27% customers.A very low no of customers have undefined education
+  - 57.15% of customers have undefined marital status, followed by 14.86 % customers who are single, then 12.38% customers who are married and 10.96% customers who are cohabitant.A very small % of customers are divorced (3.98) and widow (0.67).
+  - Major distribution include 59.53% of customers with undefined employment status, followed by 35.29% customers who are 'fully employed'. A small 8 % of customers have one of these status ; entrepneur, retireee, self employed and partially employed.
+  - Major distribution include 39.02% of customers with 'more than 5 years' duration, followed by 18.46% customers who have duration of 'up to 1 year' and 17.8% having 'up to 5 years' duration. The remaining % of customers have one of these duration ; 'up to 2 years', 'up to 3 years', 'retiree', 'other' ' up to 4 years' and 'trail period'.
+  - 
 
-Plotted histogram to see the distribution of data for each column and found that few variables are normally distributed. However, we can't really say about that which variables needed to be studied. Since, Subjectivity and polarity variable are derived ones and other historical stock variables required to sudy more that how they are related to each oyher.
 
 **Descriptive Statistics:**
 
