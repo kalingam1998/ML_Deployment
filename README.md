@@ -6,33 +6,20 @@ The credit risk is analyzed to measure the possibility of loss as result of borr
 Data for the study has been retrieved from a publicly available data set of a leading European P2P lending platform  ([**Bondora**](https://www.bondora.com/en/public-reports#dataset-file-format))
 
 - The dataset contains the individual loan details from **2009** to **2019** having both the **defaulted** and **non-defaulted** loans
+- The dataset does not contain any target attributes for 
+- - defaulted, non-defauted classes
+- - Eligible Loan Amount (ELA)
+- - Return on Investment (ROI)
+- - Equated Monthly Installment (EMI) 
+- These 4 target attributes will be created using feature engineering
 
-- The dataset does not contain any target attributes like defaulted and non defaulted loans.
+The dataset has 112 attributes intially. The attributes definition of dataset can be found here ([**Data Understanding**](https://drive.google.com/file/d/1l9YjhV4IRDHCohIDsRGKL9ADNTPaVA69/view?usp=sharing)), it will help you understand the dataset better.
 
-## Preprocessing and Sentiment Analysis
-
-We filled out the NaN values in the missed three topics. And got the polarity and subjectivity for the news' topics.
-
-**Polarity** is of **'float'** type and lies in the range of **-1**, **1**, where **1** means a **high positive** sentiment, and **-1** means a **high negative** sentiment.
-
-**Subjectivity** is also of **'float'** type and lies in the range of **0**, **1**. The value closer to **1** indicates that the sentence is mostly a **public opinion** (subjective) and not a **factual piece of information** (objective) and vice versa. 
-
-So, they will be very helpful in determining the increase or decrease of the stock market.
-
-Then we checked the missed values in the stock market information, it was complete.
-Then we merged the sentiment information (**polarity** and **subjectivity**) by **date** with the stock market information (**Open**, **High**, **Low**, **Close**, **Volume**, **Adj Close**) in **merged_data** dataframe.
-
-Before modelling and after splitting we scaled the data using standardization to shift the distribution to have a mean of zero and a standard deviation of one.
-```
-from sklearn.preprocessing import StandardScaler
-
-scaler = StandardScaler().fit(X_train)
-rescaledX = scaler.transform(X_train)
-rescaledValidationX = scaler.transform(X_valid)
-```
-**fit_transform()** is used on the training data so that we can scale the training data and also learn the scaling parameters of that data. Here, the model built by us will learn the mean and variance of the features of the training set. These learned parameters are then used to scale our test data.
-
-**transform()** uses the same mean and variance as it is calculated from our training data to transform our test data. Thus, the parameters learned by our model using the training data will help us to transform our test data. As we do not want to be biased with our model, but we want our test data to be a completely new and a surprise set for our model.
+## Preprocessing
+As the dataset is not clean, so preprocessing techniques were used to clean the dataset and make it ready for Exploratory Data Analysis (EDA).
+- The attributes having greater than 40% missing values were filtered out.
+- There are some features which have no role in targets, so they are also removed:
+- - 'ReportAsOfEOD', 'LoanId', 'LoanNumber', 'ListedOnUTC', 'DateOfBirth' (because age is already present), 'BiddingStartedOn','UserName','NextPaymentNr','NrOfScheduledPayments','IncomeFromPrincipalEmployer', 'IncomeFromPension', 'IncomeFromFamilyAllowance', 'IncomeFromSocialWelfare','IncomeFromLeavePay', 'IncomeFromChildSupport', 'IncomeOther' (As Total income is already present which is total of all these income), 'LoanApplicationStartedDate','ApplicationSignedHour', 'ApplicationSignedWeekday','ActiveScheduleFirstPaymentReached', 'PlannedInterestTillDate', 'LastPaymentOn', 'ExpectedLoss', 'LossGivenDefault', 'ExpectedReturn', 'ProbabilityOfDefault', 'PrincipalOverdueBySchedule', 'StageActiveSince', 'ModelVersion','WorseLateCategory'
 
 
 ## EDA
