@@ -197,22 +197,16 @@ Majority of loan applicants are male
   - Tenants, prefurnised property owners are likely to default more as defualt ratio is more this class than owners.
   - The customers with HR rating are defaulting more as this class has more default ratio than F class. we can see from plot of Rating.
 
+**Multivariate Analysis:**
+- In multivariate analysis, the relation and trend among multiple features is analyzed at same time to get insights into the dataset.
+- it becomes easy when we have performed bivariate analysis and plotted correlation heatmaps.
+- it is done among the features having good correlations to expose the trends and insights.
+- **FINAL observations are:**
+  - 
 
 
 **Descriptive Statistics:**
 
-Using **describe()** we could get the following result for the numerical features
-
-||Open|Close|High|Low|Volume|Adj Close|
-| :-- |:---------------:| -----:|-------:|:---------------:| -----:|------:|
-|count|1989.000000|1989.000000|1989.000000|1989.000000|1.989000e+03|1989.000000|
-|mean|13459.116049|13463.032255|13541.303173|13372.931728|1.628110e+08|13463.032255|
-|std|3143.281634|3144.006996|3136.271725|3150.420934|9.392343e+07|3144.006996|
-|min|6547.009766|6547.049805|6709.609863|6469.950195|8.410000e+06|6547.049805|
-|25%|10907.339840|10913.379880|11000.980470|10824.759770|1.000000e+08|10913.379880|
-|50%|13022.049810|13025.580080|13088.110350|12953.129880|1.351700e+08|13025.580080|
-|75%|16477.699220|16478.410160|16550.070310|16392.769530|1.926000e+08|16478.410160|
-|max|18315.060550|18312.390630|18351.359380|18272.560550|6.749200e+08|18312.390630|
 
 ## Feature Engineering
 
