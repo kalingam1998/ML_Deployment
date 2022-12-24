@@ -223,6 +223,78 @@ Majority of loan applicants are male
 ## Feature Engineering
 
 ## Model Building
+#### Metrics considered for Model Evaluation
+**Accuracy , Precision , Recall and F1 Score**
+- Accuracy: What proportion of actual positives and negatives is correctly classified?
+- Precision: What proportion of predicted positives are truly positive ?
+- Recall: What proportion of actual positives is correctly classified ?
+- F1 Score : Harmonic mean of Precision and Recall
+#### Logistic Regression
+- Logistic Regression helps find how probabilities are changed with actions.
+- The function is defined as P(y) = 1 / 1+e^-(A+Bx) 
+- Logistic regression involves finding the **best fit S-curve** where A is the intercept and B is the regression coefficient. The output of logistic regression is a probability score.
+
+#### Random Forest Classifier
+- The random forest is a classification algorithm consisting of **many decision trees. ** It uses bagging and features randomness when building each individual tree to try to create an uncorrelated forest of trees whose prediction by committee is more accurate than that of any individual tree.
+- **Linear Regression**: In this method it attempts to model the relationship between two variables by fitting a linear equation to observed data. One variable is considered to be an explanatory variable, and the other is dependent variable.
+
+#### Ridge Regression ####
+- It is the method used for the analysis of multicollinearity in multiple regression data. It is most suitable when a data set contains a higher number of predictor variables than the number of observations.
+- Multicollinearity happens when predictor variables exhibit a correlation among themselves. It aims at reducing the standard error by adding some bias in the estimates of the regression.
+- The reduction of the standard error in regression estimates significantly increases the reliability of the estimates.
+
+### Choosing the features
+After choosing LDA model based on confusion matrix here where **choose the features** taking in consideration the deployment phase.
+
+We know from the EDA that all the features are highly correlated and almost follows the same trend among the time.
+So, along with polarity and subjectivity we choose the open price with the assumption that the user knows the open price but not the close price and wants to figure out if the stock price will increase or decrease.
+
+When we apply the **logistic regression** model the F1_score we got 82.11%. After tuning parameters using GridSearchCV we got F1_score as 83.36%.
+
+When we apply **random forest classifier** model using best hyperparameters the F1_score we got 92.86%. After removing unimportant features, we got F1_score as 93.03%.
+
+When we apply **linear Regression** the R2_score we got is 78.46%.
+
+When we apply **Ridge Regression** the R2_score we got is 89%.
+```
+#### 1. Applying Ridge Regression, we created three new features i.e ELA, EMI and ROI.
+
+Now, we will create pipeline for Random Forest Classifier and Ridge Regression.
+
+***1.Random Forest Classifier***
+RFC_pipeline = Pipeline(
+    steps=[("preprocessor", simple_encoder()), 
+           ('Random Forest Classifier', RandomForestClassifier(n_estimators=50,criterion='entropy',
+                                                               max_depth=11,max_features='sqrt' ,
+                                                               random_state =123))]
+)
+
+
+RFC_pipeline.fit(X_train, y_train)
+print("model score: %.2f" % (RFC_pipeline.score(X_test, y_test)*100))
+
+
+*** 2 Ridge Regression***
+** 1.**
+numeric_transformer = Pipeline(steps = [
+    ('missing_imputer_num', mean_imputer)
+])
+
+categorical_transformer = Pipeline(steps = [
+    ('missing_imputer_cat', mode_imputer),
+    ('OHE',OneHotEncoder(drop='first'))
+])
+** 2.** preprocessor = ColumnTransformer(
+    transformers=[
+        ('num', numeric_transformer, selector(dtype_include=['int', 'float'])),
+        ('cat', categorical_transformer,selector(dtype_include='object'))]
+)
+
+** 3.** reg_pipeline = Pipeline([
+    ('preprocessor',preprocessor),
+    ('standardscaler',StandardScaler(with_mean=False)),
+    ('regressor', Ridge(alpha=2.0))
+])
 
 
 ## Deployment
